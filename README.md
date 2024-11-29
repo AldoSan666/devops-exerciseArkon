@@ -1,20 +1,39 @@
-## Added extra features to app.py
+# Nombre del Proyecto
+    Hello Matrix Counter
+    
+## Descripción
+    -Pagina Hello World, con un contador POST , boton para reiniciarlo y responder GET's en JSON con los resultados actuales del contador.
+    -El website cuenta con un estilo CSS y un HTML para layer frontal.
+    -Esta imagen instala Flask y varios componentes de microframeworks para poder ejecutarse.
+    -Esta imagen tiene la configuracion para desplegarse en clusteres de Kubernetes
+    
+## Imagen de Docker
+    https://hub.docker.com/r/aldosan666/flask-app
 
--Added POST counter
+## Despliegue en Kubernetes
+Para desplegar el servicio en un clúster de Kubernetes, utiliza los siguientes archivos:
+
+    - k8s.yaml
+    - El cluster fue probado en Minikube, el set up basico de minikube es requerido para que funcione bien ahi.
+    - El cluster fue probado en AKS y queda operativo.
+    - El cluster es de 3 replicas.
+
+## Mejoras (Opcional)
+
+    - Se agrega como se pide un contador de POSTS
+    - Se agrega un boton de POST abajo del contador para incrementarlo
+    - Se agrega un boton de CLEAR para reiniciarlo
+    - Se agrega la funcion app-url:port/GET para entregar resultados del contador en JSON
+    - Se agrega CSS y HTML
+
+## Enlaces
+
+    - https://hub.docker.com/r/aldosan666/flask-app    --- DockerHub
+    - https://github.com/AldoSan666/devops-exerciseArkon -- GitHub Repo
 
 
--Added GET response
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ORIGINAL REQUEST------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-
--Added Clear button
-
-
--Added CSS
-
-
--GET requests are able to be handled at ipaddres:port/GET
-
--------------------------------------------------------------------------------------------
 # Abraxas DevOps Exercise
 
 ## Intro

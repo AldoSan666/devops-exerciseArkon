@@ -1,3 +1,11 @@
+## Added extra features to app.py
+-Added POST counter
+-Added GET response
+-Added Clear button
+-Added CSS
+-GET requests are able to be handled at ipaddres:port/GET
+
+-------------------------------------------------------------------------------------------
 # Abraxas DevOps Exercise
 
 ## Intro

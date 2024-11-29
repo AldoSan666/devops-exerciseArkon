@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Test Abraxas</title>
+    <title>Abraxas Test</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1, p {
+            text-align: center;
+        }
+        button {
+            background-color: black;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #00ff00;
+            color: black;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+    </style>
 </head>
 <body>
-    <div id="content">
-        <h1>¡Hola Mundo Digital!</h1>
-        <p>Cantidad de solicitudes POST: {{ post_count }}</p>
-        <form method="POST" onsubmit="flashScreen()">
-            <button type="submit">Hacer una solicitud POST</button>
+    <div class="center">
+        <h1>Contador de POST Requests</h1>
+        <p>El número de solicitudes POST es: {{ post_count }}</p>
+        <form method="post" action="/">
+            <button type="submit">Enviar solicitud POST</button>
+            <button type="submit" name="reset">Resetear Contador</button>
         </form>
-        <form method="POST" onsubmit="clearFlash()">
-            <button type="submit" name="reset" value="reset">Restablecer contador</button>
+        <br>
+        <form method="get" action="/get">
+            <button type="submit">Ver Contador en /get</button>
         </form>
     </div>
-    <script>
-        function flashScreen() {
-            const body = document.body;
-            body.style.transition = 'background-color 0.2s ease';
-            body.style.backgroundColor = '#00FF00';
-            setTimeout(() => {
-                body.style.backgroundColor = 'black';
-            }, 200);
-        }
-
-        function clearFlash() {
-            const body = document.body;
-            body.style.transition = 'background-color 0.5s ease';
-            body.style.backgroundColor = '#FF0000';
-            setTimeout(() => {
-                body.style.backgroundColor = 'black';
-            }, 500);
-        }
-    </script>
 </body>
 </html>

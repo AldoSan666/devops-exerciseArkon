@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Test Abraxas</title>
+</head>
+<body>
+    <div id="content">
+        <h1>¡Hola Mundo Digital!</h1>
+        <p>Cantidad de solicitudes POST: {{ post_count }}</p>
+        <form method="POST" onsubmit="flashScreen()">
+            <button type="submit">Hacer una solicitud POST</button>
+        </form>
+        <form method="POST" onsubmit="clearFlash()">
+            <button type="submit" name="reset" value="reset">Restablecer contador</button>
+        </form>
+    </div>
+    <script>
+        function flashScreen() {
+            const body = document.body;
+            body.style.transition = 'background-color 0.2s ease';
+            body.style.backgroundColor = '#00FF00';
+            setTimeout(() => {
+                body.style.backgroundColor = 'black';
+            }, 200);
+        }
+
+        function clearFlash() {
+            const body = document.body;
+            body.style.transition = 'background-color 0.5s ease';
+            body.style.backgroundColor = '#FF0000';
+            setTimeout(() => {
+                body.style.backgroundColor = 'black';
+            }, 500);
+        }
+    </script>
+</body>
+</html>

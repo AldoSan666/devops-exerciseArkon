@@ -27,6 +27,31 @@ Para desplegar el servicio en un clúster de Kubernetes, utiliza los siguientes 
     - Se agrega un boton de CLEAR para reiniciarlo
     - Se agrega la funcion app-url:port/GET para entregar resultados del contador en JSON
     - Se agrega CSS y HTML
+    - El siguiente codigo se agrego o modifico del principal: 
+
+           [from flask import Flask, render_template, request, jsonify    # Agregado
+            app = Flask(__name__, template_folder='templates')            # Agregado
+            post_count = 0  
+            
+            @app.route('/', methods=['GET', 'POST'])                        # Agregado
+            def index():
+                global post_count
+                if request.method == 'POST':
+                    if 'reset' in request.form:
+                        post_count = 0
+                    else:
+                        post_count += 1
+                return render_template('index.html', post_count=post_count)
+            
+            @app.route('/post', methods=['POST'])                             # Agregado
+            def handle_post(): 
+                global post_count 
+                post_count += 1 
+                return "POST request received", 200
+            
+            @app.route('/get', methods=['GET'])                             # Agregado
+            def handle_get():
+                return jsonify({"post_count": post_count})]
 
 ## Enlaces
 

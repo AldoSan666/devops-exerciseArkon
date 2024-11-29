@@ -5,7 +5,9 @@
     -Pagina Hello World, con un contador POST , boton para reiniciarlo y responder GET's en JSON con los resultados actuales del contador.
     -El website cuenta con un estilo CSS y un HTML para layer frontal.
     -Esta imagen instala Flask y varios componentes de microframeworks para poder ejecutarse.
-    -Esta imagen tiene la configuracion para desplegarse en clusteres de Kubernetes
+    -Contiene un Git workflow para CI/CD en la imagen de DockerHub, el trigger es un push a la rama.
+    -Esto mantiene la imagen de Dockerhub al dia.
+    -Esta imagen tiene la configuracion para desplegarse en clusteres de Kubernetes.
     
 ## Imagen de Docker
     https://hub.docker.com/r/aldosan666/flask-app
